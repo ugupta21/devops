@@ -1,8 +1,23 @@
 {
-  "dependencies": {
-    "express": "*"
-  },
+  "name": "playwright-api-ui-framework",
+  "version": "1.0.0",
+  "description": "Reusable Playwright framework for API and UI automation with JavaScript",
+  "private": true,
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "npm run test:all",
+    "test:all": "playwright test",
+    "test:ui": "playwright test --project=ui-chromium",
+    "test:api": "playwright test --project=api",
+    "test:headed": "playwright test --project=ui-chromium --headed",
+    "test:debug": "playwright test --project=ui-chromium --debug",
+    "report": "playwright show-report"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "dotenv": "^16.4.5"
   }
 }
